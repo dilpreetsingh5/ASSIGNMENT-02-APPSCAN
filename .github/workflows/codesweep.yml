@@ -12,6 +12,9 @@ jobs:
           fetch-depth: 0
       - name: Run AppScan CodeSweep
         uses: HCL-TECH-SOFTWARE/appscan-codesweep-action@v2.1
+        with:
+          appscan-url: ${{ secrets.APPSCAN_URL }}
+          appscan-creds: ${{ secrets.APPSCAN_CREDS }}
     env:
       GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       
