@@ -7,6 +7,7 @@ on:
 jobs:
   scan:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -19,6 +20,6 @@ jobs:
           service_url: ${{ secrets.APPSCAN_URL }}
           asoc_key: ${{ secrets.APPSCAN_KEY }}
           asoc_secret: ${{ secrets.APPSCAN_SECRET }}
-          args: "--exclude **/*.yml --exclude **/*.yaml --exclude .github/**"
+          args: "--exclude '**/*.yml' --exclude '**/*.yaml' --exclude '.github/**'"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
