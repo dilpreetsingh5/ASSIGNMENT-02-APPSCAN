@@ -16,6 +16,7 @@ jobs:
           service_url: ${{ secrets.APPSCAN_URL }}
           asoc_key: ${{ secrets.APPSCAN_KEY }}
           asoc_secret: ${{ secrets.APPSCAN_SECRET }}
+          args: "--exclude **/*.yml"
     env:
       GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       
