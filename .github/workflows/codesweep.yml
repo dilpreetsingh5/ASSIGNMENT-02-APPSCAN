@@ -1,22 +1,24 @@
 name: "HCL AppScan CodeSweep"
+
 on:
   pull_request:
-    types: [opened,synchronize]
+    types: [opened, synchronize]
+
 jobs:
   scan:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
       - name: Run AppScan CodeSweep
         uses: HCL-TECH-SOFTWARE/appscan-codesweep-action@v2.1
         with:
           service_url: ${{ secrets.APPSCAN_URL }}
           asoc_key: ${{ secrets.APPSCAN_KEY }}
           asoc_secret: ${{ secrets.APPSCAN_SECRET }}
-          args: "--exclude **/*.yml"
-    env:
-      GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      
+          args: "--exclude **/*.yml --exclude **/*.yaml --exclude .github/**"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
