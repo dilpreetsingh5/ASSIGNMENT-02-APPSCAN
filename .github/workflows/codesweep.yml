@@ -20,6 +20,6 @@ jobs:
           service_url: ${{ secrets.APPSCAN_URL }}
           asoc_key: ${{ secrets.APPSCAN_KEY }}
           asoc_secret: ${{ secrets.APPSCAN_SECRET }}
-          args: "--exclude '**/*.yml' --exclude '**/*.yaml' --exclude '.github/**'"
+          entryPoint: "assignment1_code_sample_1.py assignment1_code_sample_2.ts assignment1_code_sample_3.java"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
