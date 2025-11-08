@@ -13,8 +13,9 @@ jobs:
       - name: Run AppScan CodeSweep
         uses: HCL-TECH-SOFTWARE/appscan-codesweep-action@v2.1
         with:
-          appscan-url: ${{ secrets.APPSCAN_URL }}
-          appscan-creds: ${{ secrets.APPSCAN_CREDS }}
+          service_url: ${{ secrets.APPSCAN_URL }}
+          asoc_key: ${{ secrets.APPSCAN_KEY }}
+          asoc_secret: ${{ secrets.APPSCAN_SECRET }}
     env:
       GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       
