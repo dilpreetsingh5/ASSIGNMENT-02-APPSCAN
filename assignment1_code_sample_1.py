@@ -1,7 +1,4 @@
 # Vulnerable Code Sample
-# This code contains several security vulnerabilities including:
-# Small change to trigger scan
-# Additional comment for PR
 import os
 import pymysql
 from urllib.request import urlopen
